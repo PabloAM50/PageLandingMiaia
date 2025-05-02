@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Bot, Check, Loader2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Bot, Check, Loader2, ArrowLeft } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 
 const VoiceAI = () => {
   const navigate = useNavigate();
@@ -55,6 +55,17 @@ const VoiceAI = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4 md:p-8">
+      {/* Header con botón para volver */}
+      <div className="max-w-2xl mx-auto mb-4 flex items-center">
+        <Link 
+          to="/" 
+          className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors bg-gray-800/70 rounded-lg px-3 py-2"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span>Volver al inicio</span>
+        </Link>
+      </div>
+      
       <div className="max-w-2xl mx-auto bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700">
         <div className="flex items-center space-x-4 mb-6">
           <Bot className="w-8 h-8 text-blue-400" />
