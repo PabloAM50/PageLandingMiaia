@@ -42,7 +42,10 @@ function App() {
                     Automatiza procesos, reduce costos y maximiza la eficiencia de tu negocio con soluciones de IA personalizadas
                   </p>
                   <button 
-                    onClick={() => setIsBookingModalOpen(true)}
+                    onClick={() => {
+                      console.log('Botón Comienza Ahora clickeado');
+                      setIsBookingModalOpen(true);
+                    }}
                     className="bg-gradient-to-r from-blue-500 to-teal-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center space-x-2 cursor-pointer hover:scale-105"
                   >
                     <span>Comienza Ahora</span>

@@ -10,6 +10,9 @@ interface BookingModalProps {
 
 const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
+  
+  // Debug log para verificar si el modal recibe correctamente el estado isOpen
+  console.log('BookingModal - estado isOpen:', isOpen);
 
   const options = [
     {
