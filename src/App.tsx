@@ -23,8 +23,8 @@ function App() {
           <div className="min-h-screen bg-gray-900 text-white">
             {/* Hero Section */}
             <div className="relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-blue-900/30 to-teal-900/30" />
-              <div className="container mx-auto px-4 py-24">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-blue-900/30 to-teal-900/30 pointer-events-none" />
+              <div className="container mx-auto px-4 py-24 relative z-1">
                 <div className="flex flex-col items-center text-center space-y-8">
                   <div className="flex items-center space-x-2">
                     <Brain className="w-12 h-12 text-blue-400" />
@@ -46,7 +46,8 @@ function App() {
                       console.log('Botón Comienza Ahora clickeado');
                       setIsBookingModalOpen(true);
                     }}
-                    className="bg-gradient-to-r from-blue-500 to-teal-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center space-x-2 cursor-pointer hover:scale-105"
+                    className="bg-gradient-to-r from-blue-500 to-teal-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center space-x-2 cursor-pointer hover:scale-105 relative z-10"
+                    style={{ position: 'relative', zIndex: 50 }}
                   >
                     <span>Comienza Ahora</span>
                     <ChevronRight className="w-5 h-5" />
