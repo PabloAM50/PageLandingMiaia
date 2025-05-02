@@ -17,25 +17,25 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
   const options = [
     {
       icon: <Bot className="w-8 h-8" />,
-      title: "Habla con nuestra secretaria IA",
+      title: "Habla con nuestro Agente IA",
       path: "/hablar-ia",
       description: "Conversación por voz con nuestra IA"
     },
     {
       icon: <MessageSquare className="w-8 h-8" />,
-      title: "Chatea con nuestra secretaria IA",
+      title: "Chatea con nuestro Agente IA",
       path: "/chat-ia",
       description: "Mensajería instantánea con IA"
     },
     {
       icon: <Calendar className="w-8 h-8" />,
-      title: "Agendar manualmente",
+      title: "Agendar tu cita",
       path: "/calendario",
-      description: "Selecciona fecha y hora tú mismo"
+      description: "Selecciona fecha y hora"
     },
     {
       icon: <Mail className="w-8 h-8" />,
-      title: "Enviar correo",
+      title: "Envíanos un correo",
       path: "/correo",
       description: "Procesado por nuestra IA"
     }
@@ -72,7 +72,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
                 transition={{ delay: 0.1 }}
                 className="flex justify-center mb-4"
               >
-                <Bot className="w-16 h-16 text-blue-400" />
+                <Bot className="w-8 h-8 text-blue-400" />
               </motion.div>
               <h2 className="text-2xl font-bold mb-2">¿Cómo prefieres agendar tu cita?</h2>
               <p className="text-gray-400">Selecciona el método que mejor se adapte a ti</p>
