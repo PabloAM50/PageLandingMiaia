@@ -55,7 +55,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-gray-900 rounded-2xl p-6 max-w-2xl w-full border border-gray-700 relative"
+            className="bg-gray-900 rounded-2xl p-4 md:p-6 max-w-md mx-auto w-full border border-gray-700 relative max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             <button
