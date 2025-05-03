@@ -20,9 +20,22 @@ const ChatAI = () => {
         --chat--window--width: 420px;
         --chat--window--height: 600px;
         --chat--border-radius: 1rem;
-        --chat--header--background: #1e293b;
+        --chat--header--background: linear-gradient(90deg, #1e3a8a 0%, #6d28d9 100%);
         --chat--header--color: #fff;
+        --chat--header--border-bottom: 1px solid #374151;
         --chat--message--font-size: 1rem;
+        --chat--message--bot--background: #23272f;
+        --chat--message--bot--color: #fff;
+        --chat--message--user--background: #3B82F6;
+        --chat--message--user--color: #fff;
+        --chat--message--border-radius: 1rem;
+        --chat--input--background: #1e293b;
+        --chat--input--color: #fff;
+        --chat--input--border-radius: 0.75rem;
+        --chat--toggle--background: #3B82F6;
+        --chat--toggle--color: #fff;
+        --chat--toggle--size: 48px;
+        --chat--textarea--height: 48px;
       }
     `;
     document.head.appendChild(style);
@@ -67,7 +80,7 @@ const ChatAI = () => {
           tu negocio con soluciones de IA personalizadas.
         </p>
         {/* Contenedor donde se monta el chat */}
-        <div id="n8n-chat" className="my-8 w-full h-[600px] md:h-[700px] rounded-xl overflow-hidden bg-gray-800 shadow-2xl" />
+        <div id="n8n-chat" className="my-8 w-full h-[600px] md:h-[700px] rounded-2xl overflow-hidden bg-gray-900 shadow-xl border border-gray-700" />
       </div>
     </div>
   );
