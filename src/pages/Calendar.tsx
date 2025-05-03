@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Calendar as CalendarIcon } from 'lucide-react';
+import { Calendar as CalendarIcon, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Cal, { getCalApi } from "@calcom/embed-react";
+import { Link } from 'react-router-dom';
 
 const CalendarPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +32,18 @@ const CalendarPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4 md:p-8">
-      <div className="max-w-5xl mx-auto">
+      {/* Botón para volver al inicio */}
+      <div className="max-w-6xl mx-auto mb-4 flex items-center">
+        <Link 
+          to="/" 
+          className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors bg-gray-800/70 rounded-lg px-3 py-2"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span>Volver al inicio</span>
+        </Link>
+      </div>
+      
+      <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,7 +67,7 @@ const CalendarPage = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="w-full h-[700px] md:h-[800px] relative rounded-xl overflow-hidden bg-gray-800 shadow-2xl">
+          className="w-full h-[700px] md:h-[800px] relative rounded-xl overflow-visible bg-gray-800 shadow-2xl">
           
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-800 z-10">
@@ -73,7 +85,7 @@ const CalendarPage = () => {
               style={{
                 width: "100%",
                 height: "100%",
-                overflow: "hidden",
+                overflow: "visible",
                 borderRadius: "0.75rem",
               }}
               config={{
