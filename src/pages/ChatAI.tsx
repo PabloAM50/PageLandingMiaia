@@ -29,7 +29,7 @@ const ChatAI = () => {
 
     createChat({
       webhookUrl: CHAT_WEBHOOK,
-      mode: 'window',
+      mode: 'fullscreen',
       showWelcomeScreen: false,
       target: '#n8n-chat',
       i18n: {
@@ -67,7 +67,7 @@ const ChatAI = () => {
           tu negocio con soluciones de IA personalizadas.
         </p>
         {/* Contenedor donde se monta el chat */}
-        <div id="n8n-chat" className="my-8" />
+        <div id="n8n-chat" className="my-8 w-full h-[600px] md:h-[700px] rounded-xl overflow-hidden bg-gray-800 shadow-2xl" />
       </div>
     </div>
   );
