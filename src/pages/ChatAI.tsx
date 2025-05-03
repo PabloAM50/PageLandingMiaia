@@ -30,7 +30,7 @@ const ChatAI = () => {
         --chat--message--user--background:#6729D3;
         --chat--message--user--color: #ffff;
         --chat--message--border-radius: 1rem;
-        --chat--input--background: #1e293b;
+        --chat--input--background:rgb(255, 0, 85);
         --chat--input--color: #6729D3;
         --chat--input--border-radius: 0.75rem;
         --chat--input--placeholder-color:rgb(251, 255, 0);
@@ -50,7 +50,7 @@ const ChatAI = () => {
       target: '#n8n-chat',
       i18n: {
         en: {
-          title: '¡Hola! 👋',
+          title: '',
           subtitle: 'Chatea con nuestro agente IA para resolver tus dudas',
           getStarted: 'Nueva conversación',
           inputPlaceholder: 'Escribe tu mensaje...',
@@ -59,8 +59,7 @@ const ChatAI = () => {
         }
       },
       initialMessages: [
-        '¡Hola! 👋',
-        'Soy el agente IA de MIAIA. ¿En qué puedo ayudarte hoy?'
+        'Hola soy el agente IA de MIAIA. ¿En qué puedo ayudarte hoy?'
       ]
     });
 
@@ -75,10 +74,10 @@ const ChatAI = () => {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center space-x-4 mb-8">
           <MessageSquare className="w-12 h-12 text-blue-400" />
-          <h1 className="text-4xl font-bold">Chat con nuestra secretaria IA</h1>
+          <h1 className="text-4xl font-bold">Chat con nuestro agente IA</h1>
         </div>
         <p className="text-xl text-gray-300 mb-6">
-          En esta sección podrás chatear con nuestra secretaria IA para explorar nuestros servicios y productos. 
+          En esta sección podrás chatear con nuestro agente IA para explorar nuestros servicios y productos. 
           Obtén respuestas instantáneas a todas tus preguntas y descubre cómo podemos ayudarte a transformar 
           tu negocio con soluciones de IA personalizadas.
         </p>
