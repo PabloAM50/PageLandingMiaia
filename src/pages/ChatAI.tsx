@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { MessageSquare } from 'lucide-react';
+import { MessageSquare, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import '@n8n/chat/style.css';
 import { createChat } from '@n8n/chat';
 
@@ -73,7 +74,18 @@ const ChatAI = () => {
   }, []);
 
   return (
+    
     <div className="min-h-screen bg-gray-900 text-white p-4 md:p-8">
+      {/* Header con botón para volver */}
+      <div className="max-w-2xl mx-auto mb-4 flex items-center">
+        <Link 
+          to="/" 
+          className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors bg-gray-800/70 rounded-lg px-3 py-2"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span>Volver al inicio</span>
+        </Link>
+      </div>
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center space-x-4 mb-8">
           <MessageSquare className="w-12 h-12 text-blue-400" />
