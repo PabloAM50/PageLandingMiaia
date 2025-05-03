@@ -53,7 +53,7 @@ const Email = () => {
         
         // Plan B: usar el endpoint que sabemos que funciona
         try {
-          const fallbackResponse = await fetch('https://n8n.miaia.ai/webhook/CallFromMIAIA', {
+          const fallbackResponse = await fetch('https://n8n.miaia.ai/webhook/formFromMAIA', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
