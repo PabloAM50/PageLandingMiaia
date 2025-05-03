@@ -35,12 +35,12 @@ const ChatAI = () => {
         --chat--input--background:rgb(132, 132, 132);
         --chat--input--color: #e5e7eb;
         --chat--input--border-radius: 0.75rem;
-        --chat--input--placeholder-color:rgb(251, 255, 0);
-        --chat--textarea--color:rgb(216, 216, 217);
-        --chat--toggle--background: #3B82F6;
-        --chat--toggle--color: #fff;
+        --chat--input--placeholder-color:rgb(251, 255, 0);        
+        --chat--toggle--background:rgb(40, 40, 40);
+        --chat--toggle--color: rgb(59, 59, 59);
         --chat--toggle--size: 48px;
         --chat--textarea--height: 48px;
+        --chat--textarea--color:rgb(59, 59, 59);
       }
     `;
 
