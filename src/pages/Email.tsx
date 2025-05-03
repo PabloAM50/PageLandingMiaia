@@ -25,27 +25,68 @@ const Email = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('loading');
+    setErrorMessage('');
     
     try {
-      const response = await fetch('https://n8n.miaia.ai/webhook/formFromMAIA', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
+      let success = false;
       
-      if (!response.ok) {
-        throw new Error('Error al enviar el formulario');
+      // Intenta con la configuración normal primero
+      try {
+        const response = await fetch('https://n8n.miaia.ai/webhook/formFromMAIA', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          // Modo que permite hacer solicitudes CORS sin credenciales
+          mode: 'cors',
+          body: JSON.stringify(formData)
+        });
+        
+        if (!response.ok) {
+          throw new Error('Error al enviar el formulario');
+        }
+        
+        // Si llega aquí, la respuesta fue exitosa
+        success = true;
+      } catch (corsError) {
+        console.warn('Intentando alternativa por error CORS:', corsError);
+        
+        // Plan B: usar el endpoint que sabemos que funciona
+        try {
+          const fallbackResponse = await fetch('https://n8n.miaia.ai/webhook/CallFromMIAIA', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              // Para mantener la compatibilidad con el webhook de VoiceAI
+              nombre: formData.email, // Usamos el email como nombre para que haya algo
+              email: formData.email,
+              telefono: formData.telefono || 'No proporcionado',
+              descripcion: `[Formulario de Contacto Web] ${formData.descripcion || 'Sin descripción'}`
+            })
+          });
+          
+          if (!fallbackResponse.ok) {
+            throw new Error('Error al enviar el formulario');
+          }
+          
+          success = true;
+        } catch (fallbackError) {
+          console.error('Error en el fallback:', fallbackError);
+          throw fallbackError; // Propagar el error para que se maneje en el bloque catch exterior
+        }
       }
       
-      setSubmitStatus('success');
-      // Resetear el formulario después del éxito
-      setFormData({
-        email: '',
-        telefono: '',
-        descripcion: ''
-      });
+      if (success) {
+        // Resetear el formulario después del éxito
+        setFormData({
+          email: '',
+          telefono: '',
+          descripcion: ''
+        });
+        setSubmitStatus('success');
+      }
     } catch (error) {
       console.error('Error en el formulario:', error);
       setSubmitStatus('error');
