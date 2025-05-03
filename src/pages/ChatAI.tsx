@@ -17,6 +17,7 @@ const ChatAI = () => {
         --chat--color-secondary: #0ea5e9;
         --chat--color-dark: #111827;
         --chat--color-light: #f3f4f6;
+        --chat--background: #181f2a; /* Fondo principal del chat */
         --chat--window--width: 420px;
         --chat--window--height: 600px;
         --chat--border-radius: 1rem;
@@ -32,6 +33,8 @@ const ChatAI = () => {
         --chat--input--background: #1e293b;
         --chat--input--color: #fff;
         --chat--input--border-radius: 0.75rem;
+        --chat--input--placeholder-color: #a3a3a3;
+        --chat--textarea--color: #fff;
         --chat--toggle--background: #3B82F6;
         --chat--toggle--color: #fff;
         --chat--toggle--size: 48px;
