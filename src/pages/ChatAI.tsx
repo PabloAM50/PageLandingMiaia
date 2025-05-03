@@ -30,8 +30,8 @@ const ChatAI = () => {
         --chat--message--user--background:#6729D3;
         --chat--message--user--color: #ffff;
         --chat--message--border-radius: 1rem;
-        --chat--input--background:rgb(255, 0, 85);
-        --chat--input--color: #6729D3;
+        --chat--input--background:#23272f;
+        --chat--input--color: #e5e7eb;
         --chat--input--border-radius: 0.75rem;
         --chat--input--placeholder-color:rgb(251, 255, 0);
         --chat--textarea--color:rgb(216, 216, 217);
