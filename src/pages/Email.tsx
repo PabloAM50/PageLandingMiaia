@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 const Email = () => {
   const [formData, setFormData] = useState({
+    nombre: '',
     email: '',
     telefono: '',
     descripcion: ''
@@ -59,8 +60,7 @@ const Email = () => {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              // Para mantener la compatibilidad con el webhook de VoiceAI
-              nombre: formData.email, // Usamos el email como nombre para que haya algo
+              nombre: formData.nombre,
               email: formData.email,
               telefono: formData.telefono || 'No proporcionado',
               descripcion: `[Formulario de Contacto Web] ${formData.descripcion || 'Sin descripción'}`
@@ -81,6 +81,7 @@ const Email = () => {
       if (success) {
         // Resetear el formulario después del éxito
         setFormData({
+          nombre: '',
           email: '',
           telefono: '',
           descripcion: ''
@@ -149,6 +150,21 @@ const Email = () => {
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="nombre" className="block text-sm font-medium text-gray-300 mb-1">
+                  Nombre completo <span className="text-red-400">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  value={formData.nombre}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Escribe tu nombre completo"
+                  required
+                />
+              </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                   Correo electrónico <span className="text-red-400">*</span>
