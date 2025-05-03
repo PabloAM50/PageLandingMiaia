@@ -27,13 +27,13 @@ const ChatAI = () => {
         --chat--message--font-size: 1rem;
         --chat--message--bot--background: #23272f;
         --chat--message--bot--color: #ffff;
-        --chat--message--user--background:rgb(34, 10, 52);
-        --chat--message--user--color: #fff;
+        --chat--message--user--background:#6729D3;
+        --chat--message--user--color: #ffff;
         --chat--message--border-radius: 1rem;
         --chat--input--background: #1e293b;
-        --chat--input--color: #fff;
+        --chat--input--color: #6729D3;
         --chat--input--border-radius: 0.75rem;
-        --chat--input--placeholder-color: #a3a3a3;
+        --chat--input--placeholder-color:rgb(251, 255, 0);
         --chat--textarea--color: #fff;
         --chat--toggle--background: #3B82F6;
         --chat--toggle--color: #fff;
