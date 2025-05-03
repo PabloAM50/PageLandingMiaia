@@ -1,17 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Cal, { getCalApi } from "@calcom/embed-react";
 
 const CalendarPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simular tiempo de carga del iframe
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+    // Configurar el componente de Cal.com
+    (async function () {
+      const cal = await getCalApi({"namespace":"30min"});
+      cal("ui", {
+        "hideEventTypeDetails": false,
+        "layout": "month_view",
+        "styles": {
+          "branding": {
+            "brandColor": "#3B82F6" // Color azul que coincide con el tema
+          }
+        }
+      });
 
-    return () => clearTimeout(timer);
+      // Simular tiempo de carga mínimo para mostrar el spinner
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 800);
+      
+      return () => clearTimeout(timer);
+    })();
   }, []);
 
   return (
@@ -43,7 +58,7 @@ const CalendarPage = () => {
           className="w-full h-[700px] md:h-[800px] relative rounded-xl overflow-hidden bg-gray-800 shadow-2xl">
           
           {isLoading && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-800 z-10">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 <p className="mt-4 text-blue-400">Cargando calendario...</p>
@@ -51,13 +66,23 @@ const CalendarPage = () => {
             </div>
           )}
 
-          <iframe 
-            src="https://cal.com/miaia/30min?user=miaia&overlayCalendar=true" 
-            className="w-full h-full border-0"
-            frameBorder="0"
-            allowFullScreen
-            onLoad={() => setIsLoading(false)}
-          />
+          <div className="w-full h-full">
+            <Cal 
+              namespace="30min"
+              calLink="miaia/30min"
+              style={{
+                width: "100%",
+                height: "100%",
+                overflow: "hidden",
+                borderRadius: "0.75rem",
+              }}
+              config={{
+                layout: "month_view",
+                theme: "dark",
+                hideEventTypeDetails: "false",
+              }}
+            />
+          </div>
         </motion.div>
       </div>
     </div>
