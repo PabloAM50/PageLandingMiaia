@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Brain, Clock, DollarSign, Sparkles, Bot, ChevronRight, Calendar, Database, LineChart, Briefcase } from 'lucide-react';
 import Chatbot from './components/Chatbot';
 import BookingModal from './components/BookingModal';
+import { ControlPanelSection, RestaurantPanelSection } from './AppPanels';
 import VoiceAI from './pages/VoiceAI';
 import ChatAI from './pages/ChatAI';
 import CalendarPage from './pages/Calendar';
@@ -143,27 +144,9 @@ function App() {
               </div>
             </div>
 
-            {/* CTA Section */}
-            <div className="container mx-auto px-4 py-24">
-              <div className="relative rounded-3xl bg-gradient-to-br from-blue-900 to-purple-900 p-12 overflow-hidden">
-                <div className="absolute inset-0 bg-grid-white/5" />
-                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-                  <div className="flex items-center space-x-4">
-                    <Bot className="w-16 h-16 text-blue-400" />
-                    <div>
-                      <h3 className="text-3xl font-bold mb-2">¿Listo para revolucionar tu negocio?</h3>
-                      <p className="text-gray-300">Descubre cómo la IA puede transformar tu empresa hoy mismo</p>
-                    </div>
-                  </div>
-                  <button 
-                    onClick={() => setIsChatbotOpen(true)}
-                    className="bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-white/25 transition-all duration-300 cursor-pointer hover:scale-105"
-                  >
-                    Agenda una Demo
-                  </button>
-                </div>
-              </div>
-            </div>
+            {/* Paneles de Dashboard */}
+            <ControlPanelSection />
+            <RestaurantPanelSection />
 
             {/* Chatbot Component */}
             <Chatbot isOpen={isChatbotOpen} onClose={() => setIsChatbotOpen(false)} />
