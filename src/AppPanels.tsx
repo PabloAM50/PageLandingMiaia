@@ -1,18 +1,23 @@
 import React from 'react';
+import overviewImg from './assets/ClientDashboard/overview.png';
+import callsImg from './assets/ClientDashboard/calls.png';
+import analyticsImg from './assets/ClientDashboard/analytics.png';
+import planeImg from './assets/restaurant/plane.png';
+import timelineImg from './assets/restaurant/timeline.png';
 
 const clientDashboardImages = [
   {
-    src: require('./assets/ClientDashboard/overview.png'),
+    src: overviewImg,
     alt: 'Panel de control - Overview',
     desc: 'Vista general del panel de control del cliente, con métricas clave y suscripción activa.'
   },
   {
-    src: require('./assets/ClientDashboard/calls.png'),
+    src: callsImg,
     alt: 'Panel de control - Llamadas',
     desc: 'Sección de llamadas del bot principal, mostrando duración y número total de llamadas.'
   },
   {
-    src: require('./assets/ClientDashboard/analytics.png'),
+    src: analyticsImg,
     alt: 'Panel de control - Analytics',
     desc: 'Análisis detallado de interacciones y rendimiento del bot en tiempo real.'
   }
@@ -20,12 +25,12 @@ const clientDashboardImages = [
 
 const restaurantImages = [
   {
-    src: require('./assets/restaurant/plane.png'),
+    src: planeImg,
     alt: 'Gestión de reservas',
     desc: 'Gestión inteligente y visual de reservas en restaurantes, optimizando la ocupación.'
   },
   {
-    src: require('./assets/restaurant/timeline.png'),
+    src: timelineImg,
     alt: 'Timeline de reservas',
     desc: 'Visualización en tiempo real del flujo de reservas y clientes en el restaurante.'
   }
