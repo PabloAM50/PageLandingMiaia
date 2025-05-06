@@ -8,7 +8,7 @@ interface RobotLottieProps {
 const RobotLottie: React.FC<RobotLottieProps> = ({ className }) => {
   return (
     <Player
-      src={import.meta.env.BASE_URL + 'animations/robot.lottie'}
+      src="/animations/robot.lottie"
       autoplay
       loop
       className={className || 'w-64 h-64'}
