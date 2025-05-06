@@ -1,6 +1,5 @@
 import React from 'react';
-import Lottie from 'lottie-react';
-import robotAnimation from '../assets/animations/robot.lottie';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 interface RobotLottieProps {
   className?: string;
@@ -8,10 +7,10 @@ interface RobotLottieProps {
 
 const RobotLottie: React.FC<RobotLottieProps> = ({ className }) => {
   return (
-    <Lottie 
-      animationData={robotAnimation}
-      loop
+    <Player
+      src={import.meta.env.BASE_URL + 'src/assets/animations/robot.lottie'}
       autoplay
+      loop
       className={className || 'w-64 h-64'}
       style={{ maxWidth: '100%', height: 'auto' }}
     />
