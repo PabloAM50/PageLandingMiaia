@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   base: '/', // Asegura que las rutas a los assets sean relativas a la raíz del dominio
+  assetsInclude: ['**/*.lottie'], // Permite importar archivos .lottie como assets
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
