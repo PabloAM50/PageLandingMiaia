@@ -5,30 +5,14 @@ interface RobotLottieProps {
   className?: string;
 }
 
-const lottieSrc = '/animations/robot.lottie';
-
-const RobotLottie: React.FC<RobotLottieProps> = ({ className }) => {
-  React.useEffect(() => {
-    console.log('[RobotLottie] Intentando cargar animación:', lottieSrc);
-  }, []);
-
-  return (
-    <Player
-      src={lottieSrc}
-      autoplay
-      loop
-      className={className || 'w-64 h-64'}
-      style={{ maxWidth: '100%', height: 'auto' }}
-      onEvent={event => {
-        if (event === 'load') {
-          console.log('[RobotLottie] Animación cargada correctamente:', lottieSrc);
-        }
-        if (event === 'error') {
-          console.error('[RobotLottie] Error al cargar la animación:', lottieSrc);
-        }
-      }}
-    />
-  );
-};
+const RobotLottie: React.FC<RobotLottieProps> = ({ className }) => (
+  <Player
+    src="/animations/robot.json"
+    autoplay
+    loop
+    className={className || 'w-64 h-64'}
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+);
 
 export default RobotLottie;
