@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Brain, Clock, DollarSign, Sparkles, Bot, ChevronRight, Calendar, Database, LineChart, Briefcase } from 'lucide-react';
 import Chatbot from './components/Chatbot';
 import BookingModal from './components/BookingModal';
+import RobotLottie from './components/RobotLottie';
 import { ControlPanelSection, RestaurantPanelSection } from './AppPanels';
 import VoiceAI from './pages/VoiceAI';
 import ChatAI from './pages/ChatAI';
@@ -26,35 +27,42 @@ function App() {
             <div className="relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-blue-900/30 to-teal-900/30 pointer-events-none" />
               <div className="container mx-auto px-4 py-24 relative z-1">
-                <div className="flex flex-col items-center text-center space-y-8">
-                  <div className="flex items-center space-x-2">
-                    <Brain className="w-12 h-12 text-blue-400" />
-                    <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-                      miaIA.AI
-                    </h1>
-                  </div>
-                  <h2 className="text-4xl md:text-6xl font-bold max-w-4xl leading-tight">
-                    Transformamos tu empresa con el poder de la{' '}
-                    <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                      Inteligencia Artificial
-                    </span>
-                  </h2>
-                  <p className="text-xl text-gray-300 max-w-2xl">
-                    Automatiza procesos, reduce costos y maximiza la eficiencia de tu negocio con soluciones de IA personalizadas
-                  </p>
-                  <button 
-                    onClick={() => {
-                      console.log('Botón Comienza Ahora clickeado');
-                      setIsBookingModalOpen(true);
-                    }}
-                    className="bg-gradient-to-r from-blue-500 to-teal-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center space-x-2 cursor-pointer hover:scale-105 relative z-10"
-                    style={{ position: 'relative', zIndex: 50 }}
-                  >
-                    <span>Comienza Ahora</span>
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
+  <div className="flex flex-col-reverse md:flex-row items-center justify-between md:space-x-12 space-y-8 md:space-y-0">
+    {/* Texto principal */}
+    <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-8">
+      <div className="flex items-center space-x-2 justify-center md:justify-start">
+        <Brain className="w-12 h-12 text-blue-400" />
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+          miaIA.AI
+        </h1>
+      </div>
+      <h2 className="text-4xl md:text-6xl font-bold max-w-4xl leading-tight">
+        Transformamos tu empresa con el poder de la{' '}
+        <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          Inteligencia Artificial
+        </span>
+      </h2>
+      <p className="text-xl text-gray-300 max-w-2xl">
+        Automatiza procesos, reduce costos y maximiza la eficiencia de tu negocio con soluciones de IA personalizadas
+      </p>
+      <button 
+        onClick={() => {
+          console.log('Botón Comienza Ahora clickeado');
+          setIsBookingModalOpen(true);
+        }}
+        className="bg-gradient-to-r from-blue-500 to-teal-500 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center space-x-2 cursor-pointer hover:scale-105 relative z-10"
+        style={{ position: 'relative', zIndex: 50 }}
+      >
+        <span>Comienza Ahora</span>
+        <ChevronRight className="w-5 h-5" />
+      </button>
+    </div>
+    {/* Animación robot */}
+    <div className="flex-1 flex justify-center md:justify-end mb-8 md:mb-0">
+      <RobotLottie className="w-64 h-64 md:w-96 md:h-96" />
+    </div>
+  </div>
+</div>
             </div>
 
             {/* Benefits Section */}
