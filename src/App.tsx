@@ -27,7 +27,7 @@ function App() {
             <div className="relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-blue-900/30 to-teal-900/30 pointer-events-none" />
               <div className="container mx-auto px-4 py-24 relative z-1">
-  <div className="flex flex-col-reverse md:flex-row items-center justify-between md:space-x-12 space-y-8 md:space-y-0">
+  <div className="flex flex-col md:flex-row items-center justify-between md:space-x-12 space-y-8 md:space-y-0">
     {/* Texto principal */}
     <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-8">
       <div className="flex items-center space-x-2 justify-center md:justify-start">
